@@ -1,0 +1,139 @@
+
+<%= form_for(pd_file) do |f| %>
+<% if pd_file.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(pd_file.errors.count, "error") %> prohibited this pd_file from being saved:</h2>
+
+  <ul>
+    <% pd_file.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :file_name %>
+  <%= f.text_field :file_name %>
+</div>
+
+
+<logo>
+  <%= image_tag "litao_logo.png" %>
+</logo>
+
+<div class="title">
+  <%= f.text_field :title_name ,:value => 'INVOICE' %>
+</div>
+
+<div class="company_info">
+  <div class="row">
+    <div class="col-md-3">
+
+      <div class="privider">
+        <%= f.text_field :provider ,:value => 'Service provider:' %>
+      </div>
+
+      <ul>
+        <li>
+          <div class="privider">
+            <%= f.text_field :info_provider,:value => 'LITAO Business Services (Shanghai) LTD.' %>
+          </div>
+        </li>
+        <li>
+          <div class="privider">
+            <%= f.text_field :info_provider ,:value => 'SWFC 28F, Century Ave. 100, Shanghai, China' %>
+          </div>
+        </li>
+        <li>
+          <div class="privider">
+            <%= f.text_field :info_provider ,:value => '310000400759395' %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+
+      <div class="receiver">
+        <%= f.text_field :receiver,:value => 'Consignee:' %>
+      </div>
+      <ul>
+        <li>
+          <div class="receiver">
+            <%= f.text_field :info_receiver ,:value => 'LITAO Business Services (Shanghai) LTD.' %>
+          </div>
+        </li>
+        <li>
+          <div class="receiver">
+            <%= f.text_field :info_receiver ,:value => 'SWFC 28F, Century Ave. 100, Shanghai, China' %>
+          </div>
+        </li>
+        <li>
+          <div class="receiver">
+            <%= f.text_field :info_receiver ,:value => '310000400759395' %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <dir class="col-md-3">
+      <ul>
+        <li>
+          <div class="number">
+            <%= f.text_field :file_number ,:value => 'No. Limstar-01' %>
+          </div>
+        </li>
+        <li>
+          <div class="date">
+            <%= f.date_field :file_date, :value => Time.now.strftime('%Y-%m-%d')  %>
+          </div>
+        </li>
+      </ul>
+    </dir>
+  </div>
+</div>
+
+<table style="text-align:center;">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th colspan="2">Service name</th>
+      <th>Quantity</th>
+      <th>Unit Price, EUR</th>
+      <th>Total Amount, EUR</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="3">Total</td>
+      <td></td>
+      <td></td>
+      <td>3,837</td>
+    </tr>
+    <tr>
+      <td colspan="3">Say:</td>
+      <td></td>
+      <td></td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td colspan="3">Payment Terms</td>
+      <td></td>
+      <td></td>
+      <td>----</td>
+    </tr>
+    <tbody>
+    <%= f.fields_for :invoice_line do |builder| %>
+    <%= render 'invoice_fields', f: builder %>
+
+  <% end %>
+
+    </tbody>
+  </table>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+  <% end %>

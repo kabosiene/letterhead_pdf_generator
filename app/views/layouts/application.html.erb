@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pdfgenerator</title>
+    <%= csrf_meta_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+    <%= wicked_pdf_stylesheet_link_tag   'application' %>
+    <%= wicked_pdf_stylesheet_link_tag    'font' %>
+
+  </head>
+
+  <body>
+  <div class="topbar">
+  <div class="topbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="#">LITAO document generator</a>
+      <%= tabs %>
+    </div>
+  </div>
+</div>
+
+    <%= yield %>
+  </body>
+</html>

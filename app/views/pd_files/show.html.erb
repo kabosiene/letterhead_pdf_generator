@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>File name:</strong>
+  <%= @pd_file.file_name %>
+  <strong>File date:</strong>
+  <%= @pd_file.file_date %>
+</p>
+  <strong>Client name:</strong>
+  <%= @pd_file.client_name %>
+</p>
+
+<%= link_to 'Edit', edit_pd_file_path(@pd_file) %> |
+<%= link_to 'Back', pd_files_path %>
+

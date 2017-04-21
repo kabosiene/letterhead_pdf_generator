@@ -1,0 +1,11 @@
+
+
+
+<div class="links"">
+<%= link_to 'Show', @document %> |
+<%= link_to 'Back', documents_path %>
+</div>
+
+<h1>Editing document "<%= @document.name %>"</h1>
+
+<%= render 'form', document: @document %>

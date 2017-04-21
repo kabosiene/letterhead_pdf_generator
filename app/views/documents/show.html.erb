@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @document.client %>
+</p>
+
+<p>
+  <strong>Body text:</strong>
+  <%= @document.body_text %>
+</p>
+
+<p>
+  <strong>File date:</strong>
+  <%= @document.file_date %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

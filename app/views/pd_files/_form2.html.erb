@@ -1,0 +1,36 @@
+<%= semantic_form_for @pd_file do |f| %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do %>
+    <%= f.input :file_name, :label =>"File name" %>
+  <logo>
+		<%= image_tag "litao_logo.png" , :label=>'Document logo'%>
+	</logo>
+
+  <div class="heading">
+		<div class="heading_first-line">
+    <%= f.input :file_date, :label => 'Price-list of services,' ,:class=>'file_heading'%>
+		</div>
+		<div class="heading_client">
+			  <%= f.input :client_name, :label=>'Client,', :class=> 'client_tag'%>
+		</div>
+	</div>
+
+    <%= f.input :body_text,  :label => "Document content", :class => "tinymce" %>
+<%= tinymce %>
+    	<%= f.input :footer, :input_html => { :value=>"
+		1 All details to be finalized with the client: Briefing each Monday, De-briefing each Friday.
+		2 All prices are listed in EUR, inclusive of all taxes, except the international bank transfer costs, to be undertaken by the client, as per their bank's requirement." }, :class=>'footer'%>
+
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
+
+
+
+
+
+
+

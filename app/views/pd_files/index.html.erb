@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pd_files.each do |pd_file| %>
+      <tr>
+        <td><%= pd_file.file_name %></td>
+        <td><%= link_to 'Show', pd_file %></td>
+        <td><%= link_to 'Edit', edit_pd_file_path(pd_file) %></td>
+        <td><%= button_to 'Delete', pd_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create new document', new_pd_file_path %>

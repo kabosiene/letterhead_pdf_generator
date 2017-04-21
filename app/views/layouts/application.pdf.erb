@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+ <%= wicked_pdf_stylesheet_link_tag 'application' -%>
+    <%= wicked_pdf_stylesheet_link_tag 'font' -%>
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'font' %>
+  </head>
+  <body>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

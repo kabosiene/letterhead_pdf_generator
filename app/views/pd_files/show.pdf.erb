@@ -1,0 +1,13 @@
+
+<div class="heading">
+	<div class="heading_first-line">
+		<span class="file_heading">Price-list of services</span>, <%= pd_file.file_date %>
+	</div>
+	<div class="heading_client">
+		<span class="client_tag">Client</span>, <%= pd_file.client_name %>
+	</div>
+</div>
+<div class="body_text">
+	<%= pd_file.body_text.html_safe %>
+</div>
+
