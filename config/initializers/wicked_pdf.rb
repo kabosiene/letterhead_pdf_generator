@@ -20,7 +20,7 @@ WickedPdf.config = {
   # layout: 'pdf.html',
 }
 if Rails.env.production?
-  wkhtmltopdf_path = "#{Rails.root}/bin/wkhtmltopdf-amd64"
+  wkhtmltopdf_path = "#{Rails.root}/bin/wkhtmltopdf"
 else
   wkhtmltopdf_path = "/usr/local/bin/wkhtmltopdf"
 end
