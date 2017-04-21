@@ -10,7 +10,67 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
-  end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: @document.name ,
+        template: "layouts/title.html.erb",
+        locals: {:pd_file => @document},
+        layout: 'layouts/application.pdf.erb',
+        :margin => { :bottom => 0, :top => 0, :left => 0 },
+        background:                     true,                     # backround needs to be true to enable background colors to render
+       no_background:                  false,
+       :page_offset=>1,
+          show_as_html: params.key?('debug')
+        end
+      end
+    end
+
+    def show_title
+
+    end
+
+    def show_green_corner
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render pdf: @document.name ,
+          template: "documents/plain.pdf.erb",
+          locals: {:pd_file => @document},
+          layout: 'layouts/application.pdf.erb',
+          :margin => { :bottom => 45, :top => 66, :left => 0 },
+          header:  {
+            html: {
+              template: 'documents/templates/header.pdf.erb',
+              layout:  'with_green_corner.html.erb',
+              locals:   { :pd_file => @document }
+            }
+            },
+            show_as_html: params.key?('debug')
+          end
+        end
+      end
+
+      def show_plain
+        respond_to do |format|
+          format.html
+          format.pdf do
+            render pdf: @document.name,
+            template: "documents/plain.pdf.erb",
+            locals: {:pd_file => @document},
+            layout: 'layouts/application.pdf.erb',
+            :margin => { :bottom => 45, :top => 66, :left => 0 },
+            header:  {
+              html: {
+                template: 'documents/templates/header.pdf.erb',
+                layout:  'plain.html.erb',
+                locals:   { :pd_file => @document }
+              }
+              },
+              show_as_html: params.key?('debug')
+            end
+          end
+        end
 
   # GET /documents/new
   def new
@@ -28,7 +88,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to id: @document, action: 'show', format: 'pdf'  }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
@@ -42,7 +102,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+        format.html { redirect_to id: @document, action: 'show', format: 'pdf'  }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }
@@ -71,4 +131,4 @@ class DocumentsController < ApplicationController
     def document_params
       params.require(:document).permit(:name, :client, :body_text, :file_date)
     end
-end
+  end

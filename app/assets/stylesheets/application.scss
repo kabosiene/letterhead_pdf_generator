@@ -15,6 +15,9 @@
  */
  @import "bootstrap";
 
+body{
+    overflow: hidden;
+}
 
 .file_name{
   padding: 20px;
@@ -25,13 +28,13 @@ logo img{
   height: auto;
 }
 .display img{
-  margin: 40px 50px 130px 10px;
+  margin: 45px 50px 130px 40px;
   width: 110px;
   height: auto;
 }
 .heading {
   margin-top: 80px;
-  margin-left: 55px;
+  margin-left: 80px;
   margin-bottom: 25px;
   font-size: 12px;
   line-height: 1.4;
@@ -40,7 +43,7 @@ logo img{
   font-weight:bold;
 }
 .body_text{
-  margin-left: 55px;
+  margin-left: 80px;
   width:560px;
   font-size: 14px;
   height: 500px;
@@ -52,7 +55,7 @@ logo img{
 
 footer {
  padding-top: 70px;
- margin-left: 55px;
+ margin-left: 80px;
  font-size: 12px;
  width: 520px;
 }
@@ -62,7 +65,7 @@ footer {
  -webkit-transform:rotate(90deg) translateX(100%);*/;
  -webkit-transform: rotate(90deg);
  -webkit-transform-origin: left bottom auto;
- height: 800px;
+ height: 900px;
  font-size: 10px;
  position: fixed;
  z-index: -1;
@@ -125,3 +128,28 @@ td, th {
 .tabs > ul > li {
 margin: 20px;
 }
+
+.green {
+
+    position: absolute;
+    margin-left:0px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-top: 300px solid #dfeae1;
+    border-right: 115px solid transparent;
+}
+ .green_title{
+    position: absolute;
+    margin-left:0px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-top: 1400px solid #dfeae1;
+    border-right: 550px solid transparent;
+
+ }
+.title_footer {
+
+}
+

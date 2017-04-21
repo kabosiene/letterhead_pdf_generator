@@ -13,11 +13,11 @@ class PdFilesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "LITAO letter" ,
+        render pdf: @pd_file.file_name ,
         template: "pd_files/show.pdf.erb",
         locals: {:pd_file => @pd_file},
         layout: 'layouts/application.pdf.erb',
-        :margin => { :bottom => 45 },
+        :margin => { :bottom => 45, :top => 66, :left => 0 },
         footer:  {
           html: {
             template:'pd_files/footer.pdf.erb',
