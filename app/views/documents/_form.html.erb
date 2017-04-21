@@ -1,10 +1,14 @@
+<%= tinymce_assets %>
 <%= semantic_form_for @document do |f| %>
   <%= f.semantic_errors %>
   <%= f.inputs do %>
     <%= f.input :name, :label =>"File name" %>
     <%= f.input :file_date %>
     <%= f.input :client %>
-<%= f.input :body_text,  :label => "Document content", :class => "tinymce" %>
+<%= f.text_area :body_text,  :label => "Document content", :class => "tinymce" %>
+
+<%= tinymce %>
+
 <%= tinymce %>
   <% end %>
 
