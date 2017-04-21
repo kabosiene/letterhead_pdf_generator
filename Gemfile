@@ -61,3 +61,4 @@ gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'tabulous'
 
+
