@@ -1,3 +1,5 @@
+<%= tinymce_assets %>
+
 <%= semantic_form_for @pd_file do |f| %>
   <%= f.semantic_errors %>
   <%= f.inputs do %>
@@ -15,8 +17,9 @@
 		</div>
 	</div>
 
-    <%= f.input :body_text,  :label => "Document content", :class => "tinymce" %>
+    <%= f.text_area :body_text,  :label => "Document content", :class => "tinymce" %>
 <%= tinymce %>
+
     	<%= f.input :footer, :input_html => { :value=>"1 All details to be finalized with the client: Briefing each Monday, De-briefing each Friday.
 2 All prices are listed in EUR, inclusive of all taxes, except the international bank transfer costs, to be undertaken by the client, as per their bank's requirement." }, :class=>'footer'%>
 
