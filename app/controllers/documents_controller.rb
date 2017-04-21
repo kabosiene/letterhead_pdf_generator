@@ -17,17 +17,30 @@ class DocumentsController < ApplicationController
         template: "layouts/title.html.erb",
         locals: {:pd_file => @document},
         layout: 'layouts/application.pdf.erb',
-        :margin => { :bottom => 0, :top => 0, :left => 0 },
+        :margin => { :bottom => 0, :top => 0, :left => 0, :right =>0 },
         background:                     true,                     # backround needs to be true to enable background colors to render
        no_background:                  false,
-       :page_offset=>1,
           show_as_html: params.key?('debug')
+
         end
       end
     end
 
     def show_title
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: @document.name ,
+        template: "layouts/title.html.erb",
+        locals: {:pd_file => @document},
+        layout: 'layouts/application.pdf.erb',
+        :margin => { :bottom => 0, :top => 0, :left => 0, :right =>0 },
+        background:                     true,                     # backround needs to be true to enable background colors to render
+       no_background:                  false,
+          show_as_html: params.key?('debug')
 
+        end
+      end
     end
 
     def show_green_corner

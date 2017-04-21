@@ -16,7 +16,7 @@
  @import "bootstrap";
 
 body{
-    overflow: hidden;
+color: #595a5a;
 }
 
 .file_name{
@@ -149,7 +149,27 @@ margin: 20px;
     border-right: 550px solid transparent;
 
  }
-.title_footer {
+ .title_footer{
+  font-size: 9px;
+  padding-top: 200px;
+ padding-left: 470px;
+ }
+.title_footer table{
+  width: 200px;
+  margin: 0;
+  border-left: 0.5px solid #595a5a;
+
+}
+.title_footer table td{
+  padding-left: 10px;
+  line-height: 14px;
+}
+
+
+#title.body_text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
