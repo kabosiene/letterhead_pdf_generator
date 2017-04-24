@@ -46,7 +46,6 @@ logo img{
   margin-left: 80px;
   width:560px;
   font-size: 14px;
-  height: 500px;
   text-align: justify;
 }
 .cke_reset{
@@ -54,7 +53,7 @@ logo img{
 }
 
 footer {
- padding-top: 70px;
+ padding-top: 50px;
  margin-left: 80px;
  font-size: 12px;
  width: 520px;
@@ -66,6 +65,7 @@ footer {
  -webkit-transform: rotate(90deg);
  -webkit-transform-origin: left bottom auto;
  height: 900px;
+ margin-top: -50px;
  font-size: 10px;
  position: fixed;
  z-index: -1;
@@ -73,6 +73,7 @@ footer {
 }
 .page{
  margin-left: 100px;
+
 }
 
 .string {
@@ -90,9 +91,9 @@ footer {
 form{
   padding-left: 100px;
 }
- ul li {
+/* ul li {
      display: inline;
- }
+ }*/
 .brand{
   font-size: 20px;
 }
@@ -167,9 +168,19 @@ margin: 20px;
 
 
 #title.body_text{
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
+    flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 500px;
 
 }
+div.links_to_documents li{
+  display: list-item;
+
+}
+#document_show_pdf_type_input { display:none; }
+
 

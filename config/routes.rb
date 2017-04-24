@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   resources :pd_files
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.
-  root 'pd_files#index'
+  root 'documents#index'
 end

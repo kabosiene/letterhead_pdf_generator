@@ -5,13 +5,13 @@
     <%= f.input :name, :label =>"File name" %>
     <%= f.input :file_date %>
     <%= f.input :client %>
-<%= f.text_area :body_text,  :label => "Document content", :class => "tinymce" %>
+<%= f.text_area :body_text,  :label => "Document content", :class => "tinymce",:input_html =>{:value => " "} %>
 
 <%= f.input :footer,  :label => "Footer", :class => " footer", :input_html =>{:value =>"1 All details to be finalized with the client: Briefing each Monday, De-briefing each Friday.
   2 All prices are listed in EUR, inclusive of all taxes, except the international bank transfer costs, to be undertaken by the client, as per their bank's requirement." }%>
 
 <%= tinymce %>
-<%= f.input :show_pdf_type, :input_html=>{:value=>params[:type]} %>
+<%= f.input :show_pdf_type,  :as => :hidden, :input_html=>{:value=>params[:type]} %>
   <% end %>
 
   <%= f.actions do %>

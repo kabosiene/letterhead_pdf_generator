@@ -4,19 +4,19 @@ Tabulous.setup do
 
     documents_tab do
       text          { 'Documents' }
-      link_path     { documents_path }
+      link_path     { root_path }
       visible_when  { true }
       enabled_when  { true }
       active_when   { in_action('any').of_controller('documents') }
     end
 
-    pd_files_tab do
-      text          { 'Plain File' }
-      link_path     { root_path }
-      visible_when  { true }
-      enabled_when  { true }
-      active_when   { in_action('any').of_controller('pd_files') }
-    end
+    # pd_files_tab do
+    #   text          { 'Plain File' }
+    #   link_path     { root_path }
+    #   visible_when  { true }
+    #   enabled_when  { true }
+    #   active_when   { in_action('any').of_controller('pd_files') }
+    # end
 
   end
 
