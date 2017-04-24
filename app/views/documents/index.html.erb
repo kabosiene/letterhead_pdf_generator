@@ -15,20 +15,37 @@
 
   <tbody>
     <% @documents.each do |document| %>
-      <tr>
-        <td><%= document.name %></td>
-        <td><%= document.client %></td>
-        <td><%= document.body_text %></td>
-        <td><%= document.file_date %></td>
-        <td><%= link_to 'Show', document %></td>
-        <td><%= link_to 'Edit', edit_document_path(document) %></td>
-        <td><%= button_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= document.name %></td>
+      <td><%= document.client %></td>
+      <!--         <td><%= document.body_text %></td> -->
+      <td><%= document.file_date %></td>
+      <td><%= link_to 'Show', document %></td>
+      <td><%= link_to 'Edit', edit_document_path(document) %></td>
+      <td><%= button_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 <div class="links">
-<%= link_to 'New Document', new_document_path %>
+  <%= link_to 'New Document', new_document_path %>
+</div>
+<div class="links_to_documents">
+  <ul>
+    <li>
+      <%= link_to 'New Plain Document', new_document_path(:type=>"Plain") %>
+    </li>
+    <li>
+      <%= link_to 'New Document Document', new_document_path(:type=>"Document") %>
+    </li>
+    <li>
+      <%= link_to 'New Plain with green corner Document', new_document_path(:type=>"Green_corner") %>
+    </li>
+    <li>
+      <%= link_to 'New Title Document', new_document_path(:type=>"Title") %>
+    </li>
+  </ul>
+
 </div>
