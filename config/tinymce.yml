@@ -1,2 +1,6 @@
-toolbar:
-  - styleselect | bold italic | undo redo
+
+    toolbar: [
+        "undo redo | styleselect | bold italic | link image",
+        "alignleft aligncenter alignright"
+    ]
+
